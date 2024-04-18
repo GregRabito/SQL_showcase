@@ -1,4 +1,3 @@
-# SQL_showcase
 WITH top_customer_count_country_cte (customer_id,first_name,last_name,city,country) AS
 (SELECT 
 	A.customer_id,
