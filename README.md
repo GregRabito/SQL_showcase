@@ -19,16 +19,16 @@ WHERE C.city IN(
 		JOIN city C on B.city_id = C.city_id
 		JOIN country D on C.country_id = D.country_id
   WHERE D.country IN
-			(SELECT D. country
+			 (SELECT D. country
 			 FROM customer A
-			 	JOIN address B on A.address_id = B.address_id
-				JOIN city C on B.city_id = C.city_id
-			 	JOIN country D on C.country_id = d.country_id
+			 JOIN address B on A.address_id = B.address_id
+			 JOIN city C on B.city_id = C.city_id
+			 JOIN country D on C.country_id = d.country_id
 			GROUP BY D. country
 			ORDER BY COUNT (A.customer_id) DESC LIMIT 10)
 	 GROUP BY C. city, D. Country
 	 ORDER BY COUNT (a. customer_id) DESC 
-   Limit 10)
+	 Limit 10)
 GROUP BY 
 	A.customer_id,
 	A.first_name,
